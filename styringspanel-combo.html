@@ -1,0 +1,33 @@
+<dom-module id="styringspanel-combo">
+
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+
+  <template>
+  	Drive:
+	<paper-button raised id="forward">Forward</paper-button>
+	<paper-button raised>Backward</paper-button>
+	<br/><br/>Turn:
+	<paper-button raised>Left</paper-button>
+	<paper-button raised>Right</paper-button>
+  </template>
+
+  <script>
+    // element registration
+    Polymer({
+      is: "styringspanel-combo",
+
+      // add properties and methods on the element's prototype
+
+        regularTap: function(e) {
+          alert("Thank you for tapping");
+        },
+        forwardTap: function(e) {
+          alert("Forward please!");
+        },
+        listeners: {
+          'forward.tap': 'forwardTap'
+        }
+    });
+  </script>
+
+</dom-module>
