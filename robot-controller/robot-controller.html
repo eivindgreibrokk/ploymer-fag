@@ -6,13 +6,19 @@
     }
   </style>
   <template>
-    <div>Denne skal vel ikke ha gui?!</div>
+    <div>Denne ({{argument}}) skal vel ikke ha gui?!</div>
   </template>
 
   <script>
-    Polymer({
+    RobotController = Polymer({
       is: "robot-controller",
-
+      // Constructor
+      factoryImpl: function(ipAdresse, secretKey) {
+        this.ipAdresse = ipAdresse;
+        this.secretKey = secretKey;
+        console.log("RobotController constructor " + ipAdresse + ", " + secretKey);
+      },
+      
       properties: {
       }
     });
