@@ -2,30 +2,9 @@
 <html>
   <head>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <script type="text/javascript">
-    Polymer('element-name', {
-        goLink: function(e) {
-        alert('Yo!')
-        }
-    });
-    </script>
-    <link rel="import" href="bower_components/paper-button/paper-button.html">
-    <link rel="import" href="robot-controller/robot-controller.html" />
-    <script type="text/javascript">
-      var ipAdresse = "10.0.20.1";
-      var secretKey = { "team": "PolyTeam", "key": "hcxces"};
-      var minRobotController = new RobotController(ipAdresse, secretKey);
-    </script>
+    <link rel="import" href="styringspanel-combo.html">
   </head>
   <body>
-  	Drive:
-	<paper-button raised on-tap="{{goLink}}">Forward</paper-button>
-	<paper-button raised>Backward</paper-button>
-	<br/><br/>Turn:
-	<paper-button raised>Left</paper-button>
-	<paper-button raised>Right</paper-button>
-  
-  <robot-controller />
-  
+  	<styringspanel-combo/>
   </body>
 </html>
