@@ -5,10 +5,10 @@
   <template>
   	Drive:
 	<paper-button raised id="forward">Forward</paper-button>
-	<paper-button raised>Backward</paper-button>
+	<paper-button raised id="backward">Backward</paper-button>
 	<br/><br/>Turn:
-	<paper-button raised>Left</paper-button>
-	<paper-button raised>Right</paper-button>
+	<paper-button raised id="left">Left</paper-button>
+	<paper-button raised id="right">Right</paper-button>
   </template>
 
   <script>
@@ -18,14 +18,23 @@
 
       // add properties and methods on the element's prototype
 
-        regularTap: function(e) {
-          alert("Thank you for tapping");
-        },
         forwardTap: function(e) {
           alert("Forward please!");
         },
+        backwardTap: function(e) {
+          alert("Backward please!");
+        },
+        leftTap: function(e) {
+          alert("Left please!");
+        },
+        rightTap: function(e) {
+          alert("Right please!");
+        },
         listeners: {
-          'forward.tap': 'forwardTap'
+          'forward.tap': 'forwardTap',
+          'backward.tap': 'backwardTap',
+          'left.tap': 'leftTap',
+          'right.tap': 'rightTap'
         }
     });
   </script>
