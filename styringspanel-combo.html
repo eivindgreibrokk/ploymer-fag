@@ -4,6 +4,15 @@
   <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
 
   <template>
+    <iron-ajax id="myironajax"
+    auto
+    headers=
+    url="http://192.168.134.50:8081/Motors"
+    method="PUT"
+    params='{"A": {"effect": 100, "direction": "Forward"}, "key": "0"}'
+    handle-as="json"
+    on-response="handleResponse"
+    debounce-duration="300"></iron-ajax>
   	Drive:
 	<paper-button raised id="forward">Forward</paper-button>
 	<paper-button raised id="backward">Backward</paper-button>
@@ -22,7 +31,7 @@
     Polymer({
       is: "styringspanel-combo",
         forwardTap: function(e) {
-          alert("Forward please!");
+          this.$.myironajax.generateRequest();
         },
         backwardTap: function(e) {
           alert("Backward please!");
