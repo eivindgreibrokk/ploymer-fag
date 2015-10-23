@@ -3,6 +3,14 @@
   <head>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="styringspanel-combo.html">
+    <link rel="import" href="robot-controller/robot-controller.html">
+    
+    <script type="text/javascript">
+      var ipAdresse = "10.0.20.1";
+      var secretKey = { "team": "PolyTeam", "key": "hcxces"};
+      var minRobotController = new RobotController(ipAdresse, secretKey);
+      minRobotController.start();
+    </script>
   </head>
   <body>
   	<styringspanel-combo/>
