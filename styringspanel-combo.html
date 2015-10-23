@@ -1,8 +1,10 @@
 <dom-module id="styringspanel-combo">
 
   <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/core-ajax/core-ajax.html">
 
   <template>
+    <core-ajax id="mycoreajax" auto url="http://192.168.134.50:8081/Motors" handleAs="json" response="{{response}}"></core-ajax>
   	Drive:
 	<paper-button raised id="forward">Forward</paper-button>
 	<paper-button raised id="backward">Backward</paper-button>
@@ -12,11 +14,16 @@
   </template>
 
   <script>
+    var ipAdresse = "10.0.20.1";
+    var secretKey = { "team": "PolyTeam", "key": "hcxces"};
+    var motors="http://192.168.134.50:8081/Motors"
+    var stop="http://192.168.134.50:8081/Stop"
+
     // element registration
     Polymer({
       is: "styringspanel-combo",
         forwardTap: function(e) {
-          alert("Forward please!");
+          this.$.mycoreajax.go();
         },
         backwardTap: function(e) {
           alert("Backward please!");
@@ -32,8 +39,12 @@
           'backward.tap': 'backwardTap',
           'left.tap': 'leftTap',
           'right.tap': 'rightTap'
+        },
+        response: function() {
+        	alert('response');
         }
     });
+ 
   </script>
 
 </dom-module>
