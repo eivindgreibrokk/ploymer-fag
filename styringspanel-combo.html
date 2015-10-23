@@ -1,10 +1,9 @@
 <dom-module id="styringspanel-combo">
 
   <link rel="import" href="bower_components/paper-button/paper-button.html">
-  <link rel="import" href="bower_components/core-ajax/core-ajax.html">
+  <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
 
   <template>
-    <core-ajax id="mycoreajax" auto url="http://192.168.134.50:8081/Motors" handleAs="json" response="{{response}}"></core-ajax>
   	Drive:
 	<paper-button raised id="forward">Forward</paper-button>
 	<paper-button raised id="backward">Backward</paper-button>
@@ -23,7 +22,7 @@
     Polymer({
       is: "styringspanel-combo",
         forwardTap: function(e) {
-          this.$.mycoreajax.go();
+          alert("Forward please!");
         },
         backwardTap: function(e) {
           alert("Backward please!");
