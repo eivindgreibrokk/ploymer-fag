@@ -1,0 +1,21 @@
+{
+  "name": "polymer-fag",
+  "homepage": "https://github.com/eivindgreibrokk/polymer-fag",
+  "authors": [
+    "Erling og Eivind x 2"
+  ],
+  "description": "Fagdag 2015",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  }
+}
